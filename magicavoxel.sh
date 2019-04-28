@@ -1,31 +1,31 @@
 #!/usr/bin/env playonlinux-bash
-# Date : 2019-04-13T16:11:07
-# Last revision : 2019-04-13T16:11:07
+# Date : 2019-04-28T14:43:28
+# Last revision : 2019-04-28T14:43:28
 # Wine version used : 4.0
-# Distribution used to test : Ubuntu 18.10
+# Distribution used to test : Ubuntu 19.04
 # Author : Benjamin Altpeter <hi@bn.al>
 # Repo : https://github.com/baltpeter/playonlinux-scripts/
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
 
-TITLE="Universal Extractor 2"
-PREFIX="UniExtract2"
+TITLE="MagicaVoxel 0.99.3"
+PREFIX="MagicaVoxel"
 WINE_VERSION="4.0"
 
-ZIP_URL="https://github.com/Bioruebe/UniExtract2/releases/download/v2.0.0-rc.2/UniExtractRC2.zip"
-MD5="4a2e33cb505b03ddb7f43276001f7810"
-ZIP_NAME="UniExtractRC2.zip"
+ZIP_URL="https://github.com/ephtracy/ephtracy.github.io/releases/download/v0.99.3/MagicaVoxel-0.99.3-alpha-win32.zip"
+MD5="b62c9abd9f46e453c1e0c2f9fe892a2b"
+ZIP_NAME="MagicaVoxel-0.99.3-alpha-win32.zip"
 
 POL_SetupWindow_Init
 POL_Debug_Init
 
-POL_SetupWindow_presentation "$TITLE" "Bioruebe" "https://github.com/Bioruebe/UniExtract2" "Benjamin Altpeter <hi@bn.al>" "$PREFIX"
+POL_SetupWindow_presentation "$TITLE" "ephtracy" "https://ephtracy.github.io/" "Benjamin Altpeter <hi@bn.al>" "$PREFIX"
 POL_SetupWindow_InstallMethod "LOCAL,DOWNLOAD"
 
 POL_Wine_SelectPrefix "$PREFIX"
 POL_Wine_PrefixCreate "$WINE_VERSION"
 
-INSTALL_DIR="$WINEPREFIX/drive_c/UniExtract2"
+INSTALL_DIR="$WINEPREFIX/drive_c/$PREFIX"
 
 mkdir -p "$INSTALL_DIR"
 
@@ -44,7 +44,7 @@ POL_Wine_WaitBefore "$TITLE"
 echo "unzip \"$ARCHIVE\" -d \"$INSTALL_DIR\""
 unzip "$ARCHIVE" -d "$INSTALL_DIR" || POL_Debug_Error "Unable to extract archive."
 
-POL_Shortcut "UniExtract.exe" "$TITLE"
+POL_Shortcut "MagicaVoxel.exe" "$TITLE"
 
 POL_SetupWindow_Close
 exit

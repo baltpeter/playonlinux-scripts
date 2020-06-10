@@ -1,20 +1,20 @@
 #!/usr/bin/env playonlinux-bash
 # Date : 2019-04-28T14:43:28
-# Last revision : 2019-04-28T14:43:28
+# Last revision : 2020-06-10T16:08:00
 # Wine version used : 4.0
-# Distribution used to test : Ubuntu 19.04
+# Distribution used to test : Linux Mint 19.1
 # Author : Benjamin Altpeter <hi@bn.al>
 # Repo : https://github.com/baltpeter/playonlinux-scripts/
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
 
-TITLE="MagicaVoxel 0.99.3"
+TITLE="MagicaVoxel 0.99.5.1"
 PREFIX="MagicaVoxel"
 WINE_VERSION="4.0"
 
-ZIP_URL="https://github.com/ephtracy/ephtracy.github.io/releases/download/v0.99.3/MagicaVoxel-0.99.3-alpha-win32.zip"
-MD5="b62c9abd9f46e453c1e0c2f9fe892a2b"
-ZIP_NAME="MagicaVoxel-0.99.3-alpha-win32.zip"
+ZIP_URL="https://github.com/ephtracy/ephtracy.github.io/releases/download/0.99.5/MagicaVoxel-0.99.5.1-win32.zip"
+MD5="8748e4eb1dd18faed21523ef7e7b1ab4"
+ZIP_NAME="MagicaVoxel-0.99.5.1-win32.zip"
 
 POL_SetupWindow_Init
 POL_Debug_Init
